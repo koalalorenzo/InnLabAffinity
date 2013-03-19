@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+# encoding: utf-8
+# -*- coding: utf-8 -*-
+
 from innlabaffinity import app, db
 from innlabaffinity.decorators import *
 from innlabaffinity.objects import User, get_user
