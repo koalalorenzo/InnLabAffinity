@@ -49,7 +49,14 @@ def api_vote_profile(username):
 @app.route("/api/profile/<username>/vote")
 def api_list_vote_profile(username):
     """Get votes Profile"""
-    return ""
+    author = get_user(session['user'], db)
+    user = get_user(username, db)
+    
+    if author.username not in user.vote_received:
+        user.vote_received.append(author.username)
+        user.save()
+        
+    return json.dumps({"status":"ok"})
 
 @app.route("/api/profile/<username>/skills/set")
 def api_set_skills_profile(username):

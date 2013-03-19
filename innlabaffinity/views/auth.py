@@ -99,8 +99,6 @@ def profile():
             if request.form['avatar_url']:
                 the_user.avatar_url = request.form['avatar_url']
 
-        the_user.type = int(request.form['type'])
-
         if request.form.has_key("password"):
             if len(request.form['password']) >= 6:
                 the_user.change_password(request.form['password'])
