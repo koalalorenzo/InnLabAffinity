@@ -14,7 +14,7 @@ import datetime
 @app.route("/user/login", methods=['GET', 'POST'])
 def login():
     if 'user' in session:
-        return render_template('auth/login.html')
+        return redirect(url_for("homepage"))
     
         
     if request.method == 'POST':
@@ -36,7 +36,7 @@ def login():
             return render_template('auth/login.html')
         return render_template('auth/login.html')
 
-    return redirect(url_for("homepage"))
+    return render_template('auth/login.html')
 
 @app.route("/user/new", methods=['GET', 'POST'])
 @app.route("/user/edit", methods=['GET', 'POST'])
@@ -78,6 +78,10 @@ def profile():
         else:
             flash(u"Insert a valid password", "error")
             error = True
+
+        if request.form.has_key("blog_url"):
+            if request.form['blog_url']:
+                the_user.blog_url = request.form['blog_url']
 
         if request.form.has_key("twitter_url"):
             if request.form['twitter_url']:
@@ -123,6 +127,5 @@ def profile():
 @app.route("/user/logout")
 def logout():
     session.pop('user', None)
-    session.pop('admin', None)
     flash("Goodbye!", "info")    
     return redirect(url_for('homepage'))
