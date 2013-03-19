@@ -24,6 +24,7 @@ class User(object):
         self.interests = list()
         self.looking_for_people = False
         
+        self.blog_url = ""
         self.facebook_url = ""
         self.twitter_url = ""
         self.linkedin_url = ""
@@ -86,7 +87,7 @@ class User(object):
         self.twitter_url = search['twitter_url']
         self.facebook_url = search['facebook_url']
         self.linkedin_url = search['linkedin_url']
-        
+        self.blog_url = search['blog_url']
         return
     
     def save(self):
@@ -122,6 +123,8 @@ class User(object):
         search['twitter_url'] = self.twitter_url
         search['facebook_url'] = self.facebook_url
         search['linkedin_url'] = self.linkedin_url
+        search['blog_url'] = self.blog_url
+        
         return old
         
 def get_user(username, db):
