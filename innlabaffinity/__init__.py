@@ -29,3 +29,4 @@ def serve_static(afilepath):
     return redirect(url_for('static', filename=afilepath))
 
 import innlabaffinity.views.homepage
+import innlabaffinity.views.auth
