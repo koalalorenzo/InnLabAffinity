@@ -8,7 +8,7 @@ from flask import abort
 from flask import redirect
 from flask import flash
 
-from opinionbag.objects import User, get_user
+from innlabaffinity.objects import User, get_user
 import datetime
 
 @app.route("/user/login", methods=['GET', 'POST'])
