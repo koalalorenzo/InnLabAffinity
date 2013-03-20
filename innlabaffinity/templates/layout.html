@@ -46,6 +46,7 @@
                           <i class="icon-user"></i> Account <b class="caret"></b>
                         </a>
                           <ul class="dropdown-menu">
+                            <li {% if page == "editDetail" %}class="active"{% endif %}><a href="/profile/edit"><i class="icon-pencil"></i> My Profile</a></li>
                             <li {% if page == "editProfile" %}class="active"{% endif %}><a href="/user/edit"><i class="icon-wrench"></i> Settings</a></li>
                             <li class="divider"></li>
                             <li><a href="/user/logout"><i class="icon-off"></i> Logout</a></li>

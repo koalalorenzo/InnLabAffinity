@@ -17,6 +17,7 @@ import json
 @app.route("/profile/<username>")
 def show_profile(username):
     """Show user Profile"""
+    user = get_user(session['user'], db)
     profile = User()
     profile.database = db
     profile.username = username
@@ -25,15 +26,13 @@ def show_profile(username):
         redirect(url_for("homepage"))
 
     profile.load(username)
-    return render_template("profile.html", profile=user)
+    return render_template("profile.html", user=user, profile=profile)
 
-@app.route("/profile/<username>/edit")
-def edit_profile(username):
+@app.route("/profile/edit")
+def edit_profile():
     """Edit Profile"""
     profile = get_user(session['user'], db)
-    return render_template("edit_profile.html", profile=profile)
-
-
+    return render_template("edit_profile.html", user=profile, profile=profile)
 # API
 
 @app.route("/api/profile/<username>")
