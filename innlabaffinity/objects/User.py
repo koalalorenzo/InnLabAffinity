@@ -102,28 +102,28 @@ class User(object):
         if not old:
             old = dict()
         
-        search['username'] = self.username
-        search['password'] = self.password
+        old['username'] = self.username
+        old['password'] = self.password
         
-        search['first_name'] = self.first_name
-        search['second_name'] = self.second_name
+        old['first_name'] = self.first_name
+        old['second_name'] = self.second_name
         
-        search['email'] = self.email
-        search['avatar_url'] = self.avatar_url
-        search['group'] = self.group
-        search['vote_received'] = self.vote_received
+        old['email'] = self.email
+        old['avatar_url'] = self.avatar_url
+        old['group'] = self.group
+        old['vote_received'] = self.vote_received
         
-        search['description'] = self.description
-        search['skills'] = self.skills
-        search['interests'] = self.interests
-        search['looking_for_people'] = self.looking_for_people
+        old['description'] = self.description
+        old['skills'] = self.skills
+        old['interests'] = self.interests
+        old['looking_for_people'] = self.looking_for_people
         
-        search['keywords'] = self.keywords
+        old['keywords'] = self.keywords
  
-        search['twitter_url'] = self.twitter_url
-        search['facebook_url'] = self.facebook_url
-        search['linkedin_url'] = self.linkedin_url
-        search['blog_url'] = self.blog_url
+        old['twitter_url'] = self.twitter_url
+        old['facebook_url'] = self.facebook_url
+        old['linkedin_url'] = self.linkedin_url
+        old['blog_url'] = self.blog_url
         
         return old
         
