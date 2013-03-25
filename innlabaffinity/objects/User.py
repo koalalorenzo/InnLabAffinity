@@ -6,7 +6,7 @@ from hashlib import sha1
 from datetime import datetime
 
 class User(object):
-    def __init__(self, username):
+    def __init__(self, username=None):
         self.username = username
         self.password = None
         self.__is_crypted = False
