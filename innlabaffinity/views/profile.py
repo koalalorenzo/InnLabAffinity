@@ -18,7 +18,7 @@ import json
 def show_profile(username):
     """Show user Profile"""
     user = get_user(session['user'], db)
-    profile = User()
+    profile = User("object")
     profile.database = db
     profile.username = username
     if not profile.already_exist():
