@@ -2,33 +2,33 @@
 {% block container %}
 
 <div class="span9">
-         <div class="row-fluid">
-           <div class="well">
-		   <div class="row-fluid">
-		    <div class="span4"> 
-			<img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/308886_10150303771764561_5299323_n.jpg" class="img-circle">
-                    </div>
+    <div class="row-fluid">
+        <div class="well">
+            <div class="row-fluid">
+                <div class="span4"> 
+			         <img src="https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-frc1/308886_10150303771764561_5299323_n.jpg" class="img-circle">
+                </div>
     		    <div class="span8">
-			<h2>{{ user.first_name}} {{ user.second_name}} </h2>
+                    <h2>{{ user.first_name}} {{ user.second_name}} </h2>
 	                <p>{{ user.description}}</p>
-                    </div>
-    		   </div>
-           </div>
+                </div>
+    		</div>
+        </div>
 
-            <div class="well">
-              <h3>Description</h3>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div><!--/span-->
-            <div class="well">
-              <h3>Skills</h3>
-              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            </div><!--/span-->
-            <div class="well">
-              <h3>Social</h3>
-              <p>Facebook: {{ user.facebook_url}} </p>
-              <p> Linkedin: {{ user.linkedin_url}}</p>
-              <p>Personal web site: {{ user.blog_url}}</p>
-            </div><!--/span-->
+        <div class="well">
+            <h3>Description</h3>
+            <p>{{ user.description }}</p>
+        </div><!--/span-->
+        <div class="well">
+            <h3>Skills</h3>
+            <p>{{ user.skills }}</p>
+        </div><!--/span-->
+        <div class="well">
+            <h3>Social</h3>
+            <p>Facebook: {{ user.facebook_url}} </p>
+            <p>Linkedin: {{ user.linkedin_url}}</p>
+            <p>Personal web site: {{ user.blog_url}}</p>
+        </div><!--/span-->
 	</div><!--/rowfluid-->
 </div>
 {% endblock %}
