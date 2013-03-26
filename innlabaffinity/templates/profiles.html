@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block container %}
+<form action="{{ url_for('show_profiles_in_group') }}" method="POST">
+   <select name="group" style="" id="customDropdown">
+       <option id="R1" name="R1">R1</option>
+       <option id="R2" name="R2">R2</option>
+       <option id="R3" name="R3">R3</option>
+       <option id="R4" name="R4">R4</option>
+       <option id="R5" name="R5">R5</option>
+       <option id="R6" name="R6">R6</option>
+    </select>
+    <input class="button" type=submit value="Filter">
+</form>
+
+{% for profile in profiles%}
+<div class="well">
+    <a href=" {{ url_for('show_profile', username=profile.username)}}"/>
+        {{ profile.first_name }} {{ profile.second_name}}
+    </a>
+    <p>Received votes: <i class="icon-plus-sign"></i> ({{ profile.vote_received}})</p>
+    <a href="{{ url_for('api_list_vote_profile', username=profile.username)}}">vote</a>
+    <p>Group: {{ profile.group }}</p>
+</div>
+{% endfor%}
+{% endblock %}

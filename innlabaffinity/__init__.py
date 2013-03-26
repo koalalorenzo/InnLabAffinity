@@ -31,3 +31,4 @@ def serve_static(afilepath):
 import innlabaffinity.views.homepage
 import innlabaffinity.views.auth
 import innlabaffinity.views.profile
+import innlabaffinity.views.profiles
