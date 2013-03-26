@@ -4,8 +4,8 @@
 
 MONGO_HOST = "127.0.0.1"
 MONGO_PORT = 27017
-MONGO_USERNAME = ""
-MONGO_PASSWORD = ""
+MONGO_USERNAME = "username"
+MONGO_PASSWORD = "password"
 MONGO_DB = "innlabaffinity"
 
 FLASK_SECRET_KEY = "dr.kaiy °ç^^ìòopshtl .ouoòs3£jfs"
