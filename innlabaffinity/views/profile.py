@@ -18,9 +18,8 @@ import json
 def show_profile(username):
     """Show user Profile"""
     user = get_user(session['user'], db)
-    profile = User("object")
+    profile = User(username)
     profile.database = db
-    profile.username = username
     if not profile.already_exist():
         flash("Username not exists")
         redirect(url_for("homepage"))
