@@ -18,10 +18,10 @@ import json
 def show_profiles():
     """Show users Profiles"""
     profiles = db.users.find();
-    return render_template("profiles.html", profiles = profiles)
+    return render_template("profiles.html",profiles=profiles)
    
 @app.route("/profiles/group/",  methods=['POST'])
 def show_profiles_in_group():
     """Show users Profiles"""
     profiles = db.users.find({'group': request.form['group'] })
-    return render_template("profiles.html", profiles = profiles)
+    return render_template("profiles.html", profiles=profiles)
